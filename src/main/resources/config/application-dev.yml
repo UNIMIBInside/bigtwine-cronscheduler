@@ -17,7 +17,7 @@ logging:
     level:
         ROOT: DEBUG
         io.github.jhipster: DEBUG
-        it.unimib.disco.bigtwine: DEBUG
+        it.unimib.disco.bigtwine.services.cronscheduler: DEBUG
 
 eureka:
     instance:
@@ -50,6 +50,10 @@ spring:
             bindings:
                 output:
                     destination: topic-jhipster
+    data:
+        mongodb:
+            uri: mongodb://localhost:27017
+            database: cronscheduler
     mail:
         host: localhost
         port: 25
@@ -93,8 +97,8 @@ jhipster:
     security:
         authentication:
             jwt:
-                # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-                base64-secret: OTZiMTQ0Y2FmZTIwYWM3OWRiZTUyNWI3ZmYwZmFjMDliNWQxMTI0NmRjYjIwY2U4NzYzNjdhZTg3MTM3OGVhN2E2ODI0ZDIzZGI5ODNhNmUzNjBhZmI3OGRhZDg1ZmIzNWUwYTA4ZmRkODk2YTNhZWE4OTMzM2M2Y2RkYzNlY2E=
+                # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
+                base64-secret: NjljODIwYTU1MTU0OWQ1ZmNhZjk4NWM1YTllOWVkNDYxZjQwNjg2MDZkMGRiMTA4YzBiMmFhNzFkODVlMDc2OTAyMDRlNjYxZGM1YmJmM2I0NWU1YjNlMTJjZGZiNWIyOTVmYTZmZjIxYWRmODg0MjM3MDhiNjFlMGY5YTIyNGQ=
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
