@@ -65,7 +65,7 @@ public class CronService {
         this.discoveryClient = discoveryClient;
     }
 
-    @Scheduled(cron = "* * * * * *")
+    @Scheduled(fixedRate = 60000)
     public void scheduleCronEntries() {
         List<CronEntry> cronEntries = this.cronEntryRepository.findAllByActive(true);
         for (CronEntry entry: cronEntries) {
@@ -94,7 +94,7 @@ public class CronService {
         }
     }
 
-    @Scheduled(cron = "* * * * * *")
+    @Scheduled(fixedRate = 60000)
     public void executeCronSchedules() {
         List<CronEntry> cronEntries = this.cronEntryRepository.findAllByActive(true);
         for (CronEntry entry: cronEntries) {
