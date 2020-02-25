@@ -209,7 +209,7 @@ dependencies {
     testCompile "org.hamcrest:hamcrest-library"
     testCompile "org.springframework.cloud:spring-cloud-stream-test-support"
     //jhipster-needle-gradle-dependency - JHipster will add additional dependencies here
-    compile group: 'org.bitbucket.bigtwine', name: 'commons', version: 'e12ac062fe'
+    compile group: 'com.github.UNIMIBInside', name: 'bigtwine-commons', version: 'e12ac062fe'
 }
 
 task cleanResources(type: Delete) {
